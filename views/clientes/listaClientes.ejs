@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sistema OpenPay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+</head>
+<body>
+    <% include ../menus/mainMenu.ejs %> 
+    <h1>Clientes registrados</h1>
+    <table>
+            <thead>
+              <tr>
+                  <th>id</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Correo</th>
+                  <th>telefono</th>
+                  <th>Dirección</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+                <% for(var i=0; i<clientesList.length; i++) {%>
+                    <tr>
+                      <td>
+                        <%= clientesList[i].id %>
+                      </td>
+                      <td>
+                        <%= clientesList[i].name %>
+                      </td> 
+                      <td>
+                        <%= clientesList[i].last_name %>
+                      </td>
+                      <td>
+                        <%= clientesList[i].email %>
+                      </td>    
+                      <td>
+                          <%= clientesList[i].phone_number %>
+                      </td>
+                      <td>
+                        <%= clientesList[i].address.line1+' '+clientesList[i].address.line2+' '+clientesList[i].address.city+' '+clientesList[i].address.state+' '+clientesList[i].address.postal_code+' '+clientesList[i].address.country_code %>
+                      </td>                                                               
+                    </tr>
+                 <% } %>              
+            </tbody>
+          </table>    
+</body>
+</html>

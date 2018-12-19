@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sistema OpenPay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+     <% include ../menus/mainMenu.ejs %>
+     <h1>Registro de clientes</h1>
+     <div class="row">
+        <form class="col s8"  action="/saveCliente" method="POST">
+
+            <div class="row">
+                <h3>Datos Generales</h3>
+                <div class="input-field col s6">
+                    <input name="name" type="text" class="validate">
+                    <label for="name">Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="last_name" type="text" class="validate">
+                    <label for="last_name">Primer apellido</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                        <input name="email" type="text" class="validate">
+                        <label for="email">Correo</label>
+                </div>
+                <div class="input-field col s6">
+                        <input name="phone_number" type="text" class="validate">
+                        <label for="phone_number">Teléfono</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>Domicilio</h3>
+                <div class="input-field col s6">
+                    <input name="city" type="text" class="validate">
+                    <label for="city">Ciudad</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="state" type="text" class="validate">
+                    <label for="state">Estado</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                        <input name="line1" type="text" class="validate">
+                        <label for="line1">Calle y Número</label>
+                </div>
+                <div class="input-field col s6">
+                        <input name="line2" type="text" class="validate">
+                        <label for="line2">Colonia</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s3">
+                        <input name="postal_code" type="text" class="validate">
+                        <label for="postal_code">Código postal</label>
+                </div>
+                <div class="input-field col s3">
+                        <input name="country_code" type="text" class="validate">
+                        <label for="country_code">Código país</label>
+                </div>
+                <div class="input-field col s6 right-align">
+                   <button class="btn waves-effect waves-light btn-large light-blue darken-4" type="submit">
+                       Guardar Cliente
+                   </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
